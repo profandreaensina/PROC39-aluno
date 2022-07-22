@@ -1,10 +1,9 @@
 class Game {
   constructor() {
-    // 01
+   
     this.resetTitle = createElement("h2");
     this.resetButton = createButton("");
 
-    //03
     this.leaderboardTitle = createElement("h2");
 
     this.leader1 = createElement("h2");
@@ -46,7 +45,6 @@ class Game {
     form.titleImg.position(40, 50);
     form.titleImg.class("gameTitleAfterEffect");
 
-    // 02
     this.resetTitle.html("Reinicar Jogo");
     this.resetTitle.class("resetText");
     this.resetTitle.position(width / 2 + 200, 40);
@@ -54,7 +52,6 @@ class Game {
     this.resetButton.class("resetButton");
     this.resetButton.position(width / 2 + 230, 100);
 
-    //04
     this.leaderboardTitle.html("Placar");
     this.leaderboardTitle.class("resetText");
     this.leaderboardTitle.position(width / 3 - 60, 40);
@@ -119,23 +116,17 @@ class Game {
     var leader1, leader2;
     var players = Object.values(allPlayers);
     if (
-      (players[0].rank === 0 && players[1].rank === 0) ||
-      players[0].rank === 1
-    ) {
-      // &emsp -> etiqueta usada para exibir quatro espaços.
-      leader1 =
-        players[0].rank + "&emsp;" + players[0].name + "&emsp;" + players[0].score;
+      /* 01) adicionar condição caso ambos os ranks forem 0 */ ||
+      /* 02) adicionar condição caso o player 1 tenha rank igual a 1 */) {
+      leader1 = players[0].rank + "&emsp;" + players[0].name + "&emsp;" + players[0].score;
 
-      leader2 =
-        players[1].rank + "&emsp;" + players[1].name + "&emsp;" + players[1].score;
+      leader2 = // 03) adicionar texto (string) que aparecerá no conteúdo do eleemento h2
     }
 
-    if (players[1].rank === 1) {
-      leader1 =
-        players[1].rank + "&emsp;" + players[1].name + "&emsp;" + players[1].score;
+    if (/* 04) adicionar condição caso o player 2 tenha rank igual a 1 */) {
+      leader1 = players[1].rank + "&emsp;" + players[1].name + "&emsp;" + players[1].score;
 
-      leader2 =
-        players[0].rank + "&emsp;" + players[0].name + "&emsp;" + players[0].score;
+      leader2 = // 05) adicionar texto (string) que aparecerá no conteúdo do eleemento h2
     }
 
     this.leader1.html(leader1);
